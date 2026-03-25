@@ -71,10 +71,10 @@ export default function Hero() {
                 Call (613) 858-8525
               </a>
               <Link
-                href="/services"
+                href="/#estimate"
                 className="inline-flex items-center justify-center border-2 border-white text-white text-base sm:text-lg md:text-xl font-condensed font-semibold md:font-bold px-8 sm:px-10 py-4 sm:py-5 tracking-wide sm:tracking-tight hover:bg-white hover:text-stitch-nav transition-colors uppercase"
               >
-                Explore services
+                Get my quote now
               </Link>
             </div>
             <p className="font-barlow text-white/55 text-sm">
