@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 type Review = {
   name: string;
-  location: string;
+  location?: string;
   rating: number;
   text: string;
   date: string;
@@ -12,25 +12,22 @@ type Review = {
 
 const reviews: Review[] = [
   {
-    name: 'Melissa T.',
-    location: 'Orléans, ON',
+    name: 'Damion Fusco',
     rating: 5,
-    text: 'Furnace died on a Friday night in January. They were at my door by 9am Saturday. Honest pricing, fast work, and no upselling. Will never use anyone else.',
-    date: 'January 2025',
+    text: "I've had this company in my home several times over the years and each time they have been honest and professional. They've also gone out of their way to make sure things were fixed quickly — even on Christmas Eve. Would highly recommend.",
+    date: '2 months ago',
   },
   {
-    name: 'Ryan K.',
-    location: 'Ottawa, ON',
+    name: 'Chantale Raymond',
     rating: 5,
-    text: 'Had three other companies quote me for a new AC. Ottawa HVAC PROS came in clear and honest — installed it two days later. Professional from start to finish.',
-    date: 'August 2024',
+    text: "Joel and team are incredible. They installed a new AC unit and later a new furnace, and I couldn't be happier. Joel is completely honest — he won't sell you something you don't need, answers questions day or night, and made sure I understood exactly what was wrong. I will always recommend this company.",
+    date: '3 years ago',
   },
   {
-    name: 'Danielle F.',
-    location: 'Gloucester, ON',
-    rating: 4,
-    text: 'Great service, showed up on time and explained everything clearly. Sorted out our ductwork issue in one visit. Would strongly recommend.',
-    date: 'March 2025',
+    name: 'Kristy Hardiman',
+    rating: 5,
+    text: 'Joe and his team are amazing! Got back to us quickly, completed the work fast, respected the quote, and left everything clean and tidy. Highly recommend.',
+    date: '4 years ago',
   },
 ];
 
@@ -83,7 +80,8 @@ export default function ReviewsStrip() {
                 &ldquo;{review.text}&rdquo;
               </p>
               <p className="font-condensed font-bold md:font-extrabold text-body tracking-widest text-xs uppercase">
-                — {review.name}, {review.location}
+                — {review.name}
+                {review.location ? `, ${review.location}` : ''}
               </p>
               <p className="font-barlow text-body/70 text-xs mt-1">{review.date}</p>
             </motion.article>
