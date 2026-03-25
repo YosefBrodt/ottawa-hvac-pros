@@ -41,10 +41,10 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <nav className="w-full border-b-2 border-red bg-stitch-nav" style={{ minHeight: '56px' }}>
+    <nav className="w-full border-b border-navy/10 bg-white shadow-[0_1px_0_0_rgba(13,45,94,0.06)]" style={{ minHeight: '56px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between min-h-[56px]">
         <Link href="/" className="flex items-center gap-3 shrink-0">
-          <div className="relative flex items-center justify-center overflow-hidden rounded-full shrink-0 bg-white w-10 h-10 sm:w-11 sm:h-11">
+          <div className="relative flex items-center justify-center overflow-hidden rounded-full shrink-0 w-10 h-10 sm:w-11 sm:h-11">
             <Image
               src="/logo.png"
               alt="HVAC PROS Ottawa logo"
@@ -55,10 +55,10 @@ export default function Navbar() {
             />
           </div>
           <div className="flex flex-col leading-none">
-            <span className="font-condensed font-semibold md:font-bold text-white uppercase tracking-wide text-[14px] sm:text-[15px]">
+            <span className="font-condensed font-semibold md:font-bold text-navy uppercase tracking-wide text-[14px] sm:text-[15px]">
               Ottawa HVAC PROS
             </span>
-            <span className="text-white/50 font-barlow" style={{ fontSize: '10px' }}>
+            <span className="text-body font-barlow" style={{ fontSize: '10px' }}>
               Orléans, Ontario
             </span>
           </div>
@@ -71,7 +71,7 @@ export default function Navbar() {
               className={`font-condensed font-semibold uppercase tracking-wide md:tracking-tight transition-colors text-sm ${
                 pathname === '/'
                   ? 'text-red border-b-2 border-red pb-1'
-                  : 'text-slate-300 hover:text-white pb-1 border-b-2 border-transparent'
+                  : 'text-body hover:text-navy pb-1 border-b-2 border-transparent'
               }`}
             >
               {mainLinks[0].label}
@@ -87,7 +87,7 @@ export default function Navbar() {
               className={`font-condensed font-semibold uppercase tracking-wide md:tracking-tight transition-colors text-sm flex items-center gap-1.5 pb-1 border-b-2 ${
                 servicesActive
                   ? 'text-red border-red'
-                  : 'text-slate-300 hover:text-white border-transparent'
+                  : 'text-body hover:text-navy border-transparent'
               }`}
             >
               Services
@@ -142,7 +142,7 @@ export default function Navbar() {
                 className={`font-condensed font-semibold uppercase tracking-wide md:tracking-tight transition-colors text-sm ${
                   active
                     ? 'text-red border-b-2 border-red pb-1'
-                    : 'text-slate-300 hover:text-white pb-1 border-b-2 border-transparent'
+                    : 'text-body hover:text-navy pb-1 border-b-2 border-transparent'
                 }`}
               >
                 {link.label}
@@ -165,13 +165,13 @@ export default function Navbar() {
             type="button"
           >
             <span
-              className={`block w-5 h-0.5 bg-white transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`}
+              className={`block w-5 h-0.5 bg-navy transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`}
             />
             <span
-              className={`block w-5 h-0.5 bg-white transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`}
+              className={`block w-5 h-0.5 bg-navy transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`}
             />
             <span
-              className={`block w-5 h-0.5 bg-white transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}
+              className={`block w-5 h-0.5 bg-navy transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}
             />
           </button>
         </div>
