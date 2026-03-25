@@ -109,8 +109,8 @@ export function ServicesPageContent() {
       <CtaBand
         title="Ready to book a service?"
         subtitle="Same-day appointments often available. Call us or send a message — we respond fast."
-        secondaryHref="/contact"
-        secondaryLabel="Send a message"
+        secondaryHref="/#estimate"
+        secondaryLabel="Get a free estimate"
       />
     </>
   );

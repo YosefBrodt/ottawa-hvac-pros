@@ -81,10 +81,10 @@ export function ServiceCategoryTemplate({
 
               <div className="mt-12 flex flex-wrap gap-4">
                 <Link
-                  href="/contact"
+                  href="/#estimate"
                   className="inline-flex items-center justify-center px-8 py-3.5 font-condensed font-semibold uppercase tracking-wide text-sm border-2 border-navy text-navy hover:bg-navy hover:text-white transition-colors"
                 >
-                  Request a quote
+                  Get a Free Estimate
                 </Link>
                 <Link href="/services" className="inline-flex items-center font-barlow text-sm text-body underline underline-offset-4 hover:text-navy">
                   ← All services
@@ -126,8 +126,8 @@ export function ServiceCategoryTemplate({
       <CtaBand
         title="Ready to book?"
         subtitle="Tell us what you need — we’ll give you clear pricing before any work begins."
-        secondaryHref="/contact"
-        secondaryLabel="Contact form"
+        secondaryHref="/#estimate"
+        secondaryLabel="Get a free estimate"
       />
     </>
   );

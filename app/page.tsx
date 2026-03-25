@@ -4,6 +4,7 @@ import StatsBar from '@/components/home/StatsBar';
 import ServicesSection from '@/components/home/ServicesSection';
 import WhyUsSection from '@/components/home/WhyUsSection';
 import ReviewsStrip from '@/components/home/ReviewsStrip';
+import HomeContactSection from '@/components/home/HomeContactSection';
 
 export const metadata: Metadata = {
   title: 'Ottawa HVAC PROS — Heating & Cooling in Orléans, ON',
@@ -26,6 +27,7 @@ export default function Home() {
       <ServicesSection />
       <WhyUsSection />
       <ReviewsStrip />
+      <HomeContactSection />
     </>
   );
 }
