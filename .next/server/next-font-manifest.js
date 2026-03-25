@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/yosef/hvac pros/app/layout\":[\"static/media/61d96c4884191721-s.p.woff2\",\"static/media/b0bb26939bb40fdb-s.p.woff2\",\"static/media/437e5f23c97e320c-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
