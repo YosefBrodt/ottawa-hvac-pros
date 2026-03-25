@@ -1,69 +1,42 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { Reveal } from '@/components/ui/Reveal';
 
 type ServiceCard = {
-  accentColor: string;
-  icon: React.ReactNode;
+  num: string;
+  image: string;
+  imageAlt: string;
   title: string;
   description: string;
 };
 
-function HeatingIcon() {
-  return (
-    <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="4" y="28" width="32" height="4" rx="2" fill="#0d2d5e" opacity="0.15"/>
-      <path d="M10 28 Q10 16 20 16 Q30 16 30 28" stroke="#0d2d5e" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-      <path d="M20 16 L20 8" stroke="#c0392b" strokeWidth="2.5" strokeLinecap="round"/>
-      <path d="M15 12 L20 8 L25 12" stroke="#c0392b" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-      <circle cx="20" cy="22" r="3" fill="#0d2d5e" opacity="0.4"/>
-    </svg>
-  );
-}
-
-function ACIcon() {
-  return (
-    <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="4" y="12" width="32" height="16" rx="4" stroke="#c0392b" strokeWidth="2.5"/>
-      <line x1="12" y1="20" x2="28" y2="20" stroke="#c0392b" strokeWidth="2" strokeLinecap="round"/>
-      <circle cx="20" cy="20" r="3" fill="#c0392b" opacity="0.3"/>
-      <path d="M10 30 L10 34M20 30 L20 34M30 30 L30 34" stroke="#0d2d5e" strokeWidth="2" strokeLinecap="round" opacity="0.4"/>
-    </svg>
-  );
-}
-
-function FanIcon() {
-  return (
-    <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="20" cy="20" r="14" stroke="#1a4a8a" strokeWidth="2.5"/>
-      <circle cx="20" cy="20" r="3" fill="#1a4a8a"/>
-      <path d="M20 17 C20 12 14 8 14 14" stroke="#1a4a8a" strokeWidth="2" fill="none" strokeLinecap="round"/>
-      <path d="M23 20 C28 20 32 14 26 14" stroke="#1a4a8a" strokeWidth="2" fill="none" strokeLinecap="round"/>
-      <path d="M20 23 C20 28 26 32 26 26" stroke="#1a4a8a" strokeWidth="2" fill="none" strokeLinecap="round"/>
-    </svg>
-  );
-}
-
 const cards: ServiceCard[] = [
   {
-    accentColor: '#0d2d5e',
-    icon: <HeatingIcon />,
-    title: 'HEATING',
+    num: '01',
+    image:
+      'https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'High-efficiency furnace and ductwork',
+    title: 'Heating',
     description:
       'Furnace installation, repair & maintenance. Keeping Ottawa families warm through every winter since 2008.',
   },
   {
-    accentColor: '#c0392b',
-    icon: <ACIcon />,
-    title: 'AIR CONDITIONING',
+    num: '02',
+    image:
+      'https://images.unsplash.com/photo-1631545744926-9d82d8d0b9d2?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'Residential air conditioning condenser',
+    title: 'Air conditioning',
     description:
-      'Central AC, ductless mini-splits, and seasonal tune-ups. Stay cool and efficient all Ottawa summer.',
+      'Central AC, ductless mini-splits, and seasonal tune-ups. Stay cool and efficient all summer.',
   },
   {
-    accentColor: '#1a4a8a',
-    icon: <FanIcon />,
-    title: 'AIR QUALITY',
+    num: '03',
+    image:
+      'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'Ventilation ductwork and air quality',
+    title: 'Air quality',
     description:
       'Filtration, humidifiers, UV purifiers & duct cleaning. Cleaner air for your family year-round.',
   },
@@ -71,59 +44,53 @@ const cards: ServiceCard[] = [
 
 export default function ServicesSection() {
   return (
-    <section className="relative w-full py-16 md:py-20 px-4 section-soft overflow-hidden">
-      <div
-        className="pointer-events-none absolute top-0 right-0 h-64 w-64 rounded-full bg-navy/5 blur-3xl"
-        aria-hidden
-      />
-      <div className="max-w-5xl mx-auto relative z-10">
-        <Reveal>
-          <p
-            className="font-barlow font-medium uppercase mb-2"
-            style={{ fontSize: '11px', color: '#c0392b', letterSpacing: '0.1em' }}
-          >
-            What we do
-          </p>
-        </Reveal>
-        <Reveal delay={0.06}>
-          <h2
-            className="font-condensed font-bold uppercase mb-12"
-            style={{ fontSize: 'clamp(24px, 4vw, 36px)', color: '#0d2d5e', letterSpacing: '0.03em' }}
-          >
-            Our core services
-          </h2>
-        </Reveal>
+    <section className="relative w-full py-20 md:py-24 px-4 sm:px-6 lg:px-12 bg-stitch-surface overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-14 md:mb-16 gap-8">
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2 className="font-condensed font-black text-navy uppercase leading-none mb-4 text-4xl md:text-6xl tracking-tighter">
+                Core services
+              </h2>
+              <p className="text-lg text-body font-barlow leading-relaxed">
+                Specialized solutions for residential homes — no shortcuts, just
+                honest work and clear communication.
+              </p>
+            </div>
+          </Reveal>
+          <div className="hidden md:block shrink-0">
+            <div className="w-32 h-2 bg-red" />
+          </div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-navy/20 border border-navy/20">
           {cards.map((card, i) => (
-            <Reveal key={card.title} delay={0.08 + i * 0.06}>
-              <div className="group relative h-full rounded-2xl bg-white/90 backdrop-blur-sm overflow-hidden border border-border-light/90 shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-card-hover hover:border-navy/15">
-                <div
-                  className="h-1.5 w-full origin-left scale-x-100 group-hover:scale-x-105 transition-transform duration-500"
-                  style={{ backgroundColor: card.accentColor }}
+            <Reveal key={card.title} delay={0.06 + i * 0.05}>
+              <div className="group relative aspect-[4/5] bg-navy overflow-hidden border-b-4 border-transparent hover:border-red transition-colors">
+                <Image
+                  src={card.image}
+                  alt={card.imageAlt}
+                  fill
+                  className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+                  sizes="(min-width: 768px) 33vw, 100vw"
                 />
-                <div className="p-7 flex flex-col gap-4 flex-1 min-h-[280px]">
-                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#f8fafc] to-white border border-border-light/80 shadow-sm group-hover:shadow-md transition-shadow duration-300">
-                    {card.icon}
-                  </div>
-                  <h3
-                    className="font-condensed font-bold uppercase"
-                    style={{ fontSize: '18px', color: '#0d2d5e', letterSpacing: '0.04em' }}
-                  >
+                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
+                <div className="absolute bottom-0 p-6 md:p-8 w-full">
+                  <span className="text-6xl font-condensed font-black text-white/10 absolute -top-10 left-6 md:left-8 select-none">
+                    {card.num}
+                  </span>
+                  <h3 className="font-condensed font-black text-white text-2xl md:text-3xl uppercase mb-3 tracking-tight">
                     {card.title}
                   </h3>
-                  <p className="font-barlow text-body flex-1" style={{ fontSize: '14px', lineHeight: '1.65' }}>
+                  <p className="font-barlow text-slate-300 text-sm md:text-base mb-6 leading-relaxed">
                     {card.description}
                   </p>
                   <Link
                     href="/services"
-                    className="inline-flex items-center gap-1 font-barlow font-medium mt-1 group/link"
-                    style={{ fontSize: '13px', color: '#c0392b' }}
+                    className="inline-flex items-center text-red font-condensed font-bold tracking-widest text-xs uppercase group-hover:translate-x-2 transition-transform"
                   >
-                    <span className="border-b border-red/0 group-hover/link:border-red transition-colors">
-                      Learn more
-                    </span>
-                    <span aria-hidden className="transition-transform group-hover/link:translate-x-1">
+                    Learn more
+                    <span className="ml-2" aria-hidden>
                       →
                     </span>
                   </Link>

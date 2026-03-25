@@ -10,6 +10,16 @@ const config: Config = {
       colors: {
         navy: '#0d2d5e',
         'navy-deep': '#091f42',
+        /** Stitch-style nav / deep blue */
+        stitch: {
+          nav: '#00183e',
+          'nav-dark': '#000c1f',
+          surface: '#fcf9f8',
+          'surface-container': '#f0eded',
+          'on-surface': '#1b1c1c',
+          'primary-container': '#0d2d5e',
+          'on-primary-muted': '#7c96cd',
+        },
         red: '#c0392b',
         'blue-mid': '#1a4a8a',
         body: '#5a6a88',

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -14,17 +15,17 @@ const navLinks = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav
-      className="w-full sticky top-0 z-50"
-      style={{ backgroundColor: '#0d2d5e', height: 'auto', minHeight: '54px' }}
+      className="w-full border-b-2 border-red bg-stitch-nav"
+      style={{ minHeight: '56px' }}
     >
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-[54px]">
-        {/* Logo + Brand */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between min-h-[56px]">
         <Link href="/" className="flex items-center gap-3 shrink-0">
           <div
-            className="rounded-full bg-white flex items-center justify-center overflow-hidden"
+            className="bg-white flex items-center justify-center overflow-hidden rounded-none"
             style={{ width: '38px', height: '38px' }}
           >
             <Image
@@ -37,48 +38,48 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col leading-none">
             <span
-              className="font-condensed font-bold text-white uppercase tracking-wide"
-              style={{ fontSize: '14px', letterSpacing: '0.04em' }}
+              className="font-condensed font-black text-white uppercase tracking-tighter"
+              style={{ fontSize: '15px', letterSpacing: '0.02em' }}
             >
               Ottawa HVAC PROS
             </span>
-            <span
-              className="text-white/50 font-barlow"
-              style={{ fontSize: '10px' }}
-            >
+            <span className="text-white/50 font-barlow" style={{ fontSize: '10px' }}>
               Orléans, Ontario
             </span>
           </div>
         </Link>
 
-        {/* Desktop Nav Links */}
-        <div className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-white/80 hover:text-white transition-colors font-barlow font-medium"
-              style={{ fontSize: '13px' }}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => {
+            const active = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`font-condensed font-bold uppercase tracking-tight transition-colors text-sm ${
+                  active
+                    ? 'text-red border-b-2 border-red pb-1'
+                    : 'text-slate-300 hover:text-white pb-1 border-b-2 border-transparent'
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
-        {/* Phone CTA + Hamburger */}
         <div className="flex items-center gap-3">
           <a
             href="tel:6138588525"
-            className="hidden sm:flex items-center px-4 py-1.5 rounded-full font-barlow font-medium text-white hover:opacity-90 transition-opacity shrink-0"
-            style={{ backgroundColor: '#c0392b', fontSize: '13px' }}
+            className="hidden sm:inline-flex items-center px-5 py-2 font-condensed font-bold text-white tracking-tight bg-red hover:opacity-90 transition-opacity shrink-0 text-sm uppercase"
           >
             (613) 858-8525
           </a>
-          {/* Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden flex flex-col justify-center gap-1 w-8 h-8 items-center"
             aria-label="Toggle menu"
+            type="button"
           >
             <span
               className={`block w-5 h-0.5 bg-white transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`}
@@ -93,27 +94,26 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {menuOpen && (
-        <div
-          className="md:hidden border-t border-white/10 px-4 pb-4 flex flex-col gap-3"
-          style={{ backgroundColor: '#0d2d5e' }}
-        >
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-white/80 hover:text-white transition-colors font-barlow font-medium py-2 border-b border-white/10"
-              style={{ fontSize: '14px' }}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="md:hidden border-t border-white/10 px-4 pb-4 flex flex-col gap-1 bg-stitch-nav">
+          {navLinks.map((link) => {
+            const active = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={`font-condensed font-bold uppercase py-3 border-b border-white/10 text-sm ${
+                  active ? 'text-red' : 'text-slate-300'
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <a
             href="tel:6138588525"
-            className="flex items-center justify-center px-4 py-2.5 rounded-full font-barlow font-medium text-white mt-2"
-            style={{ backgroundColor: '#c0392b', fontSize: '14px' }}
+            className="flex items-center justify-center px-4 py-3 font-condensed font-bold text-white mt-2 bg-red uppercase text-sm"
           >
             (613) 858-8525
           </a>

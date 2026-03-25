@@ -7,14 +7,14 @@ import Footer from '@/components/Footer';
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'],
-  weight: ['700'],
+  weight: ['700', '900'],
   variable: '--font-barlow-condensed',
   display: 'swap',
 });
 
 const barlow = Barlow({
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['400', '500', '600'],
   variable: '--font-barlow',
   display: 'swap',
 });
@@ -37,10 +37,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${barlowCondensed.variable} ${barlow.variable} font-barlow antialiased`}
+        className={`${barlowCondensed.variable} ${barlow.variable} font-barlow antialiased bg-stitch-surface text-stitch-on-surface`}
       >
-        <AnnouncementBar />
-        <Navbar />
+        <header className="sticky top-0 z-50 shadow-sm">
+          <AnnouncementBar />
+          <Navbar />
+        </header>
         <main>{children}</main>
         <Footer />
       </body>
