@@ -18,7 +18,7 @@ const cards: ServiceCard[] = [
     num: '01',
     href: '/services/heating',
     image:
-      'https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80',
     imageAlt: 'High-efficiency furnace and ductwork',
     title: 'Heating',
     description:
@@ -28,7 +28,7 @@ const cards: ServiceCard[] = [
     num: '02',
     href: '/services/air-conditioning',
     image:
-      'https://images.unsplash.com/photo-1631545744926-9d82d8d0b9d2?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=80',
     imageAlt: 'Residential air conditioning condenser',
     title: 'Air conditioning',
     description:
