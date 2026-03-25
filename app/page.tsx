@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/home/Hero';
-import PostalCodeBar from '@/components/home/PostalCodeBar';
 import StatsBar from '@/components/home/StatsBar';
 import ServicesSection from '@/components/home/ServicesSection';
 import WhyUsSection from '@/components/home/WhyUsSection';
@@ -23,7 +22,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <PostalCodeBar />
       <StatsBar />
       <ServicesSection />
       <WhyUsSection />
