@@ -3,11 +3,9 @@
 import type { ReactNode } from 'react';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
+import { HVAC_HERO_IMAGE } from '@/lib/hvac-hero';
 
 const ease = [0.22, 1, 0.36, 1] as const;
-
-const heroImage =
-  'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1920&q=80';
 
 type PageHeroProps = {
   eyebrow: string;
@@ -22,7 +20,7 @@ export function PageHero({ eyebrow, title, description }: PageHeroProps) {
     <section className="relative min-h-[min(42vh,400px)] md:min-h-[360px] flex items-center bg-stitch-primary-container overflow-hidden border-b-4 border-red">
       <div className="absolute inset-0 opacity-35">
         <Image
-          src={heroImage}
+          src={HVAC_HERO_IMAGE}
           alt=""
           fill
           className="object-cover grayscale"

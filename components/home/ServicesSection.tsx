@@ -6,6 +6,7 @@ import { Reveal } from '@/components/ui/Reveal';
 
 type ServiceCard = {
   num: string;
+  href: string;
   image: string;
   imageAlt: string;
   title: string;
@@ -15,6 +16,7 @@ type ServiceCard = {
 const cards: ServiceCard[] = [
   {
     num: '01',
+    href: '/services/heating',
     image:
       'https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=80',
     imageAlt: 'High-efficiency furnace and ductwork',
@@ -24,6 +26,7 @@ const cards: ServiceCard[] = [
   },
   {
     num: '02',
+    href: '/services/air-conditioning',
     image:
       'https://images.unsplash.com/photo-1631545744926-9d82d8d0b9d2?auto=format&fit=crop&w=900&q=80',
     imageAlt: 'Residential air conditioning condenser',
@@ -33,6 +36,7 @@ const cards: ServiceCard[] = [
   },
   {
     num: '03',
+    href: '/services/air-quality',
     image:
       'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80',
     imageAlt: 'Ventilation ductwork and air quality',
@@ -86,7 +90,7 @@ export default function ServicesSection() {
                     {card.description}
                   </p>
                   <Link
-                    href="/services"
+                    href={card.href}
                     className="inline-flex items-center text-red font-condensed font-bold tracking-widest text-xs uppercase group-hover:translate-x-2 transition-transform"
                   >
                     Learn more

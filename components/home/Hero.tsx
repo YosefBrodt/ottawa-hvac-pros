@@ -3,11 +3,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
+import { HVAC_HERO_IMAGE } from '@/lib/hvac-hero';
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
-
-const heroImage =
-  'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1920&q=80';
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -16,8 +14,8 @@ export default function Hero() {
     <section className="relative min-h-[min(100vh,920px)] md:min-h-[870px] flex items-center bg-stitch-primary-container overflow-hidden pt-6 pb-16 md:pb-24">
       <div className="absolute inset-0 opacity-40">
         <Image
-          src={heroImage}
-          alt="Industrial HVAC equipment and mechanical piping"
+          src={HVAC_HERO_IMAGE}
+          alt="Residential furnace and HVAC equipment"
           fill
           className="object-cover grayscale"
           sizes="100vw"
@@ -60,23 +58,28 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col gap-4"
             initial={reduce ? false : { opacity: 0, y: 14 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.18, ease: easeOut }}
           >
-            <a
-              href="tel:6138588525"
-              className="inline-flex items-center justify-center bg-red text-white text-base sm:text-lg md:text-xl font-condensed font-semibold md:font-bold px-8 sm:px-10 py-4 sm:py-5 tracking-wide sm:tracking-tight hover:brightness-110 transition-all uppercase"
-            >
-              Book service now
-            </a>
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center border-2 border-white text-white text-base sm:text-lg md:text-xl font-condensed font-semibold md:font-bold px-8 sm:px-10 py-4 sm:py-5 tracking-wide sm:tracking-tight hover:bg-white hover:text-stitch-nav transition-colors uppercase"
-            >
-              View our services
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <a
+                href="tel:6138588525"
+                className="inline-flex items-center justify-center bg-red text-white text-base sm:text-lg md:text-xl font-condensed font-semibold md:font-bold px-8 sm:px-10 py-4 sm:py-5 tracking-wide sm:tracking-tight hover:brightness-110 transition-all uppercase"
+              >
+                Call (613) 858-8525
+              </a>
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center border-2 border-white text-white text-base sm:text-lg md:text-xl font-condensed font-semibold md:font-bold px-8 sm:px-10 py-4 sm:py-5 tracking-wide sm:tracking-tight hover:bg-white hover:text-stitch-nav transition-colors uppercase"
+              >
+                Explore services
+              </Link>
+            </div>
+            <p className="font-barlow text-white/55 text-sm">
+              Same-day appointments often available · Orléans &amp; Ottawa
+            </p>
           </motion.div>
         </div>
       </div>

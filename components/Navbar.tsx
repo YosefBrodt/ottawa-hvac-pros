@@ -1,13 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { SERVICE_SUBLINKS } from '@/lib/services-nav';
 
-const navLinks = [
+const mainLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services' },
   { label: 'Financing', href: '/financing' },
   { label: 'About', href: '/about' },
   { label: 'Reviews', href: '/reviews' },
@@ -15,13 +15,33 @@ const navLinks = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const pathname = usePathname();
+  const servicesRef = useRef<HTMLDivElement>(null);
+
+  const servicesActive = pathname.startsWith('/services');
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    }
+    if (servicesOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [servicesOpen]);
+
+  useEffect(() => {
+    setServicesOpen(false);
+    setMenuOpen(false);
+    setMobileServicesOpen(false);
+  }, [pathname]);
 
   return (
-    <nav
-      className="w-full border-b-2 border-red bg-stitch-nav"
-      style={{ minHeight: '56px' }}
-    >
+    <nav className="w-full border-b-2 border-red bg-stitch-nav" style={{ minHeight: '56px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between min-h-[56px]">
         <Link href="/" className="flex items-center gap-3 shrink-0">
           <div
@@ -46,8 +66,76 @@ export default function Navbar() {
           </div>
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => {
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          {mainLinks[0] && (
+            <Link
+              href={mainLinks[0].href}
+              className={`font-condensed font-semibold uppercase tracking-wide md:tracking-tight transition-colors text-sm ${
+                pathname === '/'
+                  ? 'text-red border-b-2 border-red pb-1'
+                  : 'text-slate-300 hover:text-white pb-1 border-b-2 border-transparent'
+              }`}
+            >
+              {mainLinks[0].label}
+            </Link>
+          )}
+
+          <div className="relative" ref={servicesRef}>
+            <button
+              type="button"
+              onClick={() => setServicesOpen((o) => !o)}
+              aria-expanded={servicesOpen}
+              aria-haspopup="true"
+              className={`font-condensed font-semibold uppercase tracking-wide md:tracking-tight transition-colors text-sm flex items-center gap-1.5 pb-1 border-b-2 ${
+                servicesActive
+                  ? 'text-red border-red'
+                  : 'text-slate-300 hover:text-white border-transparent'
+              }`}
+            >
+              Services
+              <svg
+                className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+                aria-hidden
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {servicesOpen && (
+              <div
+                className="absolute left-0 top-full pt-2 w-[min(100vw-2rem,20rem)] z-[60]"
+                role="menu"
+              >
+                <div className="border border-navy/15 bg-white shadow-[0_24px_50px_-12px_rgba(0,24,60,0.25)] py-2">
+                  <Link
+                    href="/services"
+                    className="block px-4 py-3 font-condensed font-semibold text-navy uppercase text-xs tracking-wide hover:bg-stitch-surface-container border-b border-navy/10"
+                    role="menuitem"
+                  >
+                    All services overview
+                  </Link>
+                  {SERVICE_SUBLINKS.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-4 py-3 hover:bg-stitch-surface-container transition-colors"
+                      role="menuitem"
+                    >
+                      <span className="font-condensed font-semibold text-navy uppercase text-xs tracking-wide block">
+                        {item.label}
+                      </span>
+                      <span className="font-barlow text-body text-[11px] leading-snug mt-0.5 block">{item.sub}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {mainLinks.slice(1).map((link) => {
             const active = pathname === link.href;
             return (
               <Link
@@ -92,8 +180,61 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden border-t border-white/10 px-4 pb-4 flex flex-col gap-1 bg-stitch-nav">
-          {navLinks.map((link) => {
+        <div className="md:hidden border-t border-white/10 px-4 pb-4 flex flex-col gap-0 bg-stitch-nav">
+          <Link
+            href="/"
+            onClick={() => setMenuOpen(false)}
+            className={`font-condensed font-semibold uppercase py-3.5 border-b border-white/10 text-sm tracking-wide ${
+              pathname === '/' ? 'text-red' : 'text-slate-300'
+            }`}
+          >
+            Home
+          </Link>
+
+          <div className="border-b border-white/10">
+            <button
+              type="button"
+              onClick={() => setMobileServicesOpen((s) => !s)}
+              className={`w-full flex items-center justify-between font-condensed font-semibold uppercase py-3.5 text-sm tracking-wide text-left ${
+                servicesActive ? 'text-red' : 'text-slate-300'
+              }`}
+              aria-expanded={mobileServicesOpen}
+            >
+              Services
+              <svg
+                className={`w-4 h-4 transition-transform shrink-0 ${mobileServicesOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {mobileServicesOpen && (
+              <div className="pb-3 pl-2 space-y-1">
+                <Link
+                  href="/services"
+                  onClick={() => setMenuOpen(false)}
+                  className="block py-2 font-barlow text-sm text-white/90 border-l-2 border-red pl-3"
+                >
+                  All services overview
+                </Link>
+                {SERVICE_SUBLINKS.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="block py-2 font-barlow text-sm text-slate-300 border-l-2 border-white/20 pl-3"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {mainLinks.slice(1).map((link) => {
             const active = pathname === link.href;
             return (
               <Link
@@ -108,6 +249,7 @@ export default function Navbar() {
               </Link>
             );
           })}
+
           <a
             href="tel:6138588525"
             className="flex items-center justify-center px-4 py-3.5 font-condensed font-semibold text-white mt-2 bg-red uppercase text-sm tracking-wide"

@@ -1,9 +1,10 @@
 import Link from 'next/link';
 
 const serviceLinks = [
-  { label: 'Residential', href: '/services' },
-  { label: 'Commercial', href: '/services' },
-  { label: 'Emergency repair', href: '/contact' },
+  { label: 'Heating', href: '/services/heating' },
+  { label: 'Air conditioning', href: '/services/air-conditioning' },
+  { label: 'Air quality', href: '/services/air-quality' },
+  { label: 'All services', href: '/services' },
   { label: 'Financing', href: '/financing' },
 ];
 

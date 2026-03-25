@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { PageHero } from '@/components/layout/PageHero';
 import { CtaBand } from '@/components/layout/CtaBand';
@@ -8,6 +9,7 @@ const services = [
   {
     accentColor: '#0d2d5e',
     title: 'Heating services',
+    href: '/services/heating',
     summary:
       'Furnace installation, repair & maintenance — keeping your family warm through every Ottawa winter.',
     items: [
@@ -22,6 +24,7 @@ const services = [
   {
     accentColor: '#c0392b',
     title: 'Air conditioning',
+    href: '/services/air-conditioning',
     summary: 'Central AC, ductless mini-splits, and seasonal tune-ups for Ottawa summers.',
     items: [
       'Central air conditioner installation',
@@ -35,6 +38,7 @@ const services = [
   {
     accentColor: '#1a4a8a',
     title: 'Air quality',
+    href: '/services/air-quality',
     summary: 'Breathe cleaner air — filtration, humidification, UV purification, and duct cleaning.',
     items: [
       'HEPA & high-efficiency air filtration',
@@ -90,6 +94,12 @@ export function ServicesPageContent() {
                     </li>
                   ))}
                 </ul>
+                <Link
+                  href={svc.href}
+                  className="inline-flex mt-8 items-center font-condensed font-semibold uppercase tracking-wide text-sm text-red hover:underline underline-offset-4"
+                >
+                  Full {svc.title.toLowerCase()} guide →
+                </Link>
               </div>
             </motion.div>
           ))}
