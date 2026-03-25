@@ -50,7 +50,7 @@ export default function Navbar() {
               alt="HVAC PROS Ottawa logo"
               width={44}
               height={44}
-              className="object-contain w-full h-full p-0.5"
+              className="object-contain object-center w-full h-full min-w-full min-h-full scale-[1.12] origin-center"
               priority
             />
           </div>
