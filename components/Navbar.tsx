@@ -48,14 +48,14 @@ export default function Navbar() {
           className="group flex items-center gap-3.5 sm:gap-4 shrink-0 min-w-0"
         >
           <div
-            className="relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white p-1.5 shadow-[0_10px_40px_-12px_rgba(0,0,0,0.55),0_0_0_1px_rgba(255,255,255,0.22),inset_0_1px_0_rgba(255,255,255,0.95)] ring-1 ring-white/30 transition-[box-shadow,transform] duration-300 group-hover:shadow-[0_14px_44px_-10px_rgba(0,0,0,0.5)] group-hover:-translate-y-px w-[52px] h-[52px] sm:w-[58px] sm:h-[58px] md:w-[68px] md:h-[68px]"
+            className="relative flex shrink-0 items-center justify-center overflow-visible rounded-full p-0 shadow-[0_12px_36px_-8px_rgba(0,0,0,0.55)] ring-2 ring-white/25 transition-[box-shadow,transform] duration-300 group-hover:shadow-[0_16px_44px_-8px_rgba(0,0,0,0.5)] group-hover:-translate-y-px w-[52px] h-[52px] sm:w-[58px] sm:h-[58px] md:w-[68px] md:h-[68px]"
           >
             <Image
               src="/logo.png"
               alt=""
               width={80}
               height={80}
-              className="object-contain object-center w-full h-full rounded-xl"
+              className="object-contain object-center h-full w-full drop-shadow-sm"
               priority
             />
           </div>
