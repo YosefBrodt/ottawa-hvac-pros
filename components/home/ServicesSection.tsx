@@ -49,7 +49,7 @@ export default function ServicesSection() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-14 md:mb-16 gap-8">
           <Reveal>
             <div className="max-w-2xl">
-              <h2 className="font-condensed font-black text-navy uppercase leading-none mb-4 text-4xl md:text-6xl tracking-tighter">
+              <h2 className="font-condensed font-bold md:font-extrabold text-navy uppercase leading-tight mb-4 text-3xl sm:text-4xl md:text-6xl tracking-tight md:tracking-tighter">
                 Core services
               </h2>
               <p className="text-lg text-body font-barlow leading-relaxed">
@@ -76,10 +76,10 @@ export default function ServicesSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
                 <div className="absolute bottom-0 p-6 md:p-8 w-full">
-                  <span className="text-6xl font-condensed font-black text-white/10 absolute -top-10 left-6 md:left-8 select-none">
+                  <span className="text-6xl font-condensed font-bold md:font-extrabold text-white/10 absolute -top-10 left-6 md:left-8 select-none">
                     {card.num}
                   </span>
-                  <h3 className="font-condensed font-black text-white text-2xl md:text-3xl uppercase mb-3 tracking-tight">
+                  <h3 className="font-condensed font-bold md:font-extrabold text-white text-2xl md:text-3xl uppercase mb-3 tracking-tight">
                     {card.title}
                   </h3>
                   <p className="font-barlow text-slate-300 text-sm md:text-base mb-6 leading-relaxed">

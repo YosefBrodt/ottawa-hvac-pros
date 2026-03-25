@@ -65,68 +65,61 @@ export function ReviewsPageContent() {
     <>
       <PageHero
         eyebrow="From your neighbours"
-        title="Customer Reviews"
+        title="Customer reviews"
         description={
           "4.7 stars from real Ottawa homeowners. We don't pay for reviews — we earn them."
         }
       />
 
-      <section className="relative w-full py-16 md:py-20 px-4 bg-white overflow-hidden">
-        <div
-          className="absolute top-24 right-10 h-56 w-56 rounded-full bg-navy/[0.04] blur-3xl pointer-events-none"
-          aria-hidden
-        />
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+      <section className="relative w-full py-16 md:py-24 px-4 sm:px-6 lg:px-12 bg-stitch-surface overflow-hidden border-b border-navy/10">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {reviews.map((r, i) => (
               <motion.article
                 key={r.name + r.date}
-                className="group rounded-2xl border border-border-light/90 bg-gradient-to-br from-white to-[#fafbfc] p-6 md:p-7 flex flex-col gap-4 shadow-card transition-all duration-500 hover:-translate-y-1 hover:shadow-card-hover hover:border-navy/10"
+                className={`flex flex-col gap-4 p-8 md:p-10 bg-stitch-surface-container border-b-4 ${
+                  i % 3 === 1 ? 'border-red' : 'border-border-light'
+                }`}
                 initial={reduce ? false : { opacity: 0, y: 22 }}
                 whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-30px' }}
                 transition={{ duration: 0.5, delay: (i % 6) * 0.05, ease }}
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <Stars rating={r.rating} variant="light" />
-                  <span
-                    className="font-barlow px-3 py-1 rounded-full border border-border-light/80 bg-white/80 text-navy text-[11px] font-medium"
-                  >
+                  <Stars rating={r.rating} variant="amber" />
+                  <span className="font-condensed font-bold uppercase tracking-widest text-[10px] text-navy border border-navy/20 px-2 py-1 bg-white">
                     {r.service}
                   </span>
                 </div>
-                <p className="font-barlow text-body flex-1" style={{ fontSize: '14px', lineHeight: '1.7' }}>
+                <p className="font-barlow text-navy italic flex-1 text-sm md:text-base leading-relaxed">
                   &ldquo;{r.text}&rdquo;
                 </p>
-                <div className="flex flex-wrap items-end justify-between gap-2 pt-3 border-t border-border-light">
-                  <p className="font-barlow font-semibold" style={{ fontSize: '13px', color: '#0d2d5e' }}>
-                    {r.name}{' '}
-                    <span className="font-normal text-body">· {r.location}</span>
+                <div className="flex flex-wrap items-end justify-between gap-2 pt-4 border-t border-navy/10">
+                  <p className="font-condensed font-bold md:font-extrabold uppercase tracking-widest text-xs text-body">
+                    — {r.name}, {r.location}
                   </p>
-                  <p className="font-barlow text-[12px]" style={{ color: '#aab0c0' }}>
-                    {r.date}
-                  </p>
+                  <p className="font-barlow text-body text-xs">{r.date}</p>
                 </div>
               </motion.article>
             ))}
           </div>
 
           <Reveal delay={0.1}>
-            <div className="mt-12 md:mt-14 p-8 md:p-10 rounded-2xl text-center border border-border-light bg-gradient-to-br from-[#f8fafc] via-white to-[#f1f5f9] shadow-card">
-              <p className="font-barlow font-semibold mb-2" style={{ fontSize: '16px', color: '#0d2d5e' }}>
+            <div className="mt-14 md:mt-16 p-8 md:p-10 text-center border border-navy/15 bg-stitch-surface-container">
+              <p className="font-condensed font-bold md:font-extrabold uppercase text-navy mb-2 text-lg tracking-tight">
                 Had a great experience?
               </p>
-              <p className="font-barlow text-body mb-6 max-w-lg mx-auto" style={{ fontSize: '14px', lineHeight: '1.65' }}>
-                We&apos;d love a Google review. It takes two minutes and helps Ottawa homeowners find honest HVAC service.
+              <p className="font-barlow text-body mb-8 max-w-lg mx-auto text-sm leading-relaxed">
+                We&apos;d love a Google review. It takes two minutes and helps Ottawa homeowners find honest HVAC
+                service.
               </p>
               <a
                 href="https://g.page/r/CXqSdOm28tYzEBM/review"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-barlow font-medium text-white shadow-lift transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift-lg hover:brightness-110"
-                style={{ backgroundColor: '#0d2d5e', fontSize: '14px' }}
+                className="inline-flex items-center justify-center px-10 py-4 font-condensed font-bold md:font-extrabold text-white bg-navy hover:opacity-90 transition-opacity uppercase text-sm tracking-tight"
               >
-                Leave a Google Review
+                Leave a Google review
               </a>
             </div>
           </Reveal>

@@ -37,10 +37,7 @@ export default function Navbar() {
             />
           </div>
           <div className="flex flex-col leading-none">
-            <span
-              className="font-condensed font-black text-white uppercase tracking-tighter"
-              style={{ fontSize: '15px', letterSpacing: '0.02em' }}
-            >
+            <span className="font-condensed font-semibold md:font-bold text-white uppercase tracking-wide text-[14px] sm:text-[15px]">
               Ottawa HVAC PROS
             </span>
             <span className="text-white/50 font-barlow" style={{ fontSize: '10px' }}>
@@ -56,7 +53,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-condensed font-bold uppercase tracking-tight transition-colors text-sm ${
+                className={`font-condensed font-semibold uppercase tracking-wide md:tracking-tight transition-colors text-sm ${
                   active
                     ? 'text-red border-b-2 border-red pb-1'
                     : 'text-slate-300 hover:text-white pb-1 border-b-2 border-transparent'
@@ -71,7 +68,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="tel:6138588525"
-            className="hidden sm:inline-flex items-center px-5 py-2 font-condensed font-bold text-white tracking-tight bg-red hover:opacity-90 transition-opacity shrink-0 text-sm uppercase"
+            className="hidden sm:inline-flex items-center px-5 py-2 font-condensed font-semibold text-white tracking-wide bg-red hover:opacity-90 transition-opacity shrink-0 text-sm uppercase"
           >
             (613) 858-8525
           </a>
@@ -103,7 +100,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className={`font-condensed font-bold uppercase py-3 border-b border-white/10 text-sm ${
+                className={`font-condensed font-semibold uppercase py-3.5 border-b border-white/10 text-sm tracking-wide ${
                   active ? 'text-red' : 'text-slate-300'
                 }`}
               >
@@ -113,7 +110,7 @@ export default function Navbar() {
           })}
           <a
             href="tel:6138588525"
-            className="flex items-center justify-center px-4 py-3 font-condensed font-bold text-white mt-2 bg-red uppercase text-sm"
+            className="flex items-center justify-center px-4 py-3.5 font-condensed font-semibold text-white mt-2 bg-red uppercase text-sm tracking-wide"
           >
             (613) 858-8525
           </a>

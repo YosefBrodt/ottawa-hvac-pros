@@ -61,7 +61,7 @@ export default function ReviewsStrip() {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-4 mb-12 md:mb-16">
           <div className="h-0.5 w-12 bg-red shrink-0" />
-          <h2 className="font-condensed font-black text-navy uppercase tracking-tight text-3xl md:text-4xl">
+          <h2 className="font-condensed font-bold md:font-extrabold text-navy uppercase tracking-tight text-2xl sm:text-3xl md:text-4xl leading-tight">
             Verified clients
           </h2>
         </div>
@@ -82,7 +82,7 @@ export default function ReviewsStrip() {
               <p className="font-barlow text-navy italic mb-6 leading-relaxed text-sm md:text-base">
                 &ldquo;{review.text}&rdquo;
               </p>
-              <p className="font-condensed font-black text-body tracking-widest text-xs uppercase">
+              <p className="font-condensed font-bold md:font-extrabold text-body tracking-widest text-xs uppercase">
                 — {review.name}, {review.location}
               </p>
               <p className="font-barlow text-body/70 text-xs mt-1">{review.date}</p>

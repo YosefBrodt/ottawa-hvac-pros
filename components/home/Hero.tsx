@@ -32,14 +32,14 @@ export default function Hero() {
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: easeOut }}
-            className="inline-block bg-red text-white px-4 py-1.5 mb-6 font-condensed font-bold tracking-widest text-xs uppercase"
+            className="inline-block bg-red text-white px-4 py-2 mb-6 font-condensed font-semibold tracking-[0.12em] sm:tracking-widest text-xs uppercase"
           >
             24/7 emergency repair available
           </motion.div>
 
           <motion.h1
-            className="font-condensed font-black text-white uppercase leading-[0.95] tracking-tighter mb-6"
-            style={{ fontSize: 'clamp(2.5rem, 8vw, 5.5rem)' }}
+            className="font-condensed font-bold md:font-extrabold text-white uppercase leading-[1.06] sm:leading-[0.98] tracking-tight sm:tracking-tighter mb-6"
+            style={{ fontSize: 'clamp(2.15rem, 7vw, 5.5rem)' }}
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.05, ease: easeOut }}
@@ -50,7 +50,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="font-barlow text-slate-300 text-lg md:text-2xl max-w-2xl mb-10 leading-relaxed font-medium"
+            className="font-barlow text-slate-300 text-[1.05rem] sm:text-lg md:text-2xl max-w-2xl mb-10 leading-[1.7] font-semibold"
             initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.12, ease: easeOut }}
@@ -67,13 +67,13 @@ export default function Hero() {
           >
             <a
               href="tel:6138588525"
-              className="inline-flex items-center justify-center bg-red text-white text-lg md:text-xl font-condensed font-black px-10 py-5 tracking-tight hover:brightness-110 transition-all uppercase"
+              className="inline-flex items-center justify-center bg-red text-white text-base sm:text-lg md:text-xl font-condensed font-semibold md:font-bold px-8 sm:px-10 py-4 sm:py-5 tracking-wide sm:tracking-tight hover:brightness-110 transition-all uppercase"
             >
               Book service now
             </a>
             <Link
               href="/services"
-              className="inline-flex items-center justify-center border-2 border-white text-white text-lg md:text-xl font-condensed font-black px-10 py-5 tracking-tight hover:bg-white hover:text-stitch-nav transition-colors uppercase"
+              className="inline-flex items-center justify-center border-2 border-white text-white text-base sm:text-lg md:text-xl font-condensed font-semibold md:font-bold px-8 sm:px-10 py-4 sm:py-5 tracking-wide sm:tracking-tight hover:bg-white hover:text-stitch-nav transition-colors uppercase"
             >
               View our services
             </Link>

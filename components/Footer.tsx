@@ -19,7 +19,7 @@ export default function Footer() {
     <footer className="w-full bg-stitch-nav text-white">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-6 sm:px-10 lg:px-12 py-14 max-w-none bg-stitch-surface-container">
         <div>
-          <div className="font-condensed font-black text-navy uppercase mb-4 text-lg tracking-tight">
+          <div className="font-condensed font-bold md:font-extrabold text-navy uppercase mb-4 text-lg tracking-tight">
             Ottawa HVAC PROS
           </div>
           <p className="font-barlow text-body text-sm leading-relaxed">
@@ -28,7 +28,7 @@ export default function Footer() {
           </p>
         </div>
         <div>
-          <h3 className="font-condensed font-black text-navy mb-4 uppercase tracking-widest text-xs">
+          <h3 className="font-condensed font-bold md:font-extrabold text-navy mb-4 uppercase tracking-widest text-xs">
             Services
           </h3>
           <ul className="space-y-2">
@@ -45,7 +45,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="font-condensed font-black text-navy mb-4 uppercase tracking-widest text-xs">
+          <h3 className="font-condensed font-bold md:font-extrabold text-navy mb-4 uppercase tracking-widest text-xs">
             Support
           </h3>
           <ul className="space-y-2">
@@ -62,12 +62,12 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="font-condensed font-black text-navy mb-4 uppercase tracking-widest text-xs">
+          <h3 className="font-condensed font-bold md:font-extrabold text-navy mb-4 uppercase tracking-widest text-xs">
             Dispatch
           </h3>
           <a
             href="tel:6138588525"
-            className="font-condensed font-black text-red text-2xl block mb-2 hover:opacity-90"
+            className="font-condensed font-bold md:font-extrabold text-red text-2xl block mb-2 hover:opacity-90"
           >
             (613) 858-8525
           </a>

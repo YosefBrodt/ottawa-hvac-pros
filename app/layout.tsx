@@ -1,20 +1,21 @@
 import type { Metadata } from 'next';
-import { Barlow_Condensed, Barlow } from 'next/font/google';
+import { Montserrat, Barlow } from 'next/font/google';
 import './globals.css';
 import AnnouncementBar from '@/components/AnnouncementBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const barlowCondensed = Barlow_Condensed({
+/** Display / headings — roomier than condensed, pairs with Barlow */
+const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['700', '900'],
-  variable: '--font-barlow-condensed',
+  weight: ['500', '600', '700', '800', '900'],
+  variable: '--font-montserrat',
   display: 'swap',
 });
 
 const barlow = Barlow({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-barlow',
   display: 'swap',
 });
@@ -37,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${barlowCondensed.variable} ${barlow.variable} font-barlow antialiased bg-stitch-surface text-stitch-on-surface`}
+        className={`${montserrat.variable} ${barlow.variable} font-barlow font-medium leading-relaxed antialiased bg-stitch-surface text-stitch-on-surface`}
       >
         <header className="sticky top-0 z-50 shadow-sm">
           <AnnouncementBar />

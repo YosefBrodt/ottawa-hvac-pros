@@ -27,7 +27,8 @@ const config: Config = {
         gold: '#e8c547',
       },
       fontFamily: {
-        condensed: ['var(--font-barlow-condensed)', 'sans-serif'],
+        /** Montserrat — display headings & UI (class name kept for minimal churn) */
+        condensed: ['var(--font-montserrat)', 'sans-serif'],
         barlow: ['var(--font-barlow)', 'sans-serif'],
       },
       boxShadow: {

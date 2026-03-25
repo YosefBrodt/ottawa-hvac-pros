@@ -5,8 +5,7 @@ export default function AnnouncementBar() {
       style={{ backgroundColor: '#c0392b' }}
     >
       <p
-        className="text-white font-condensed font-bold uppercase tracking-wider"
-        style={{ fontSize: '11px', letterSpacing: '0.08em' }}
+        className="text-white font-condensed font-semibold uppercase tracking-wide text-[10px] sm:text-[11px] leading-snug px-1"
       >
         Spring tune-up special — $49 AC inspection. Call{' '}
         <a

@@ -10,38 +10,29 @@ type CtaBandProps = {
 
 export function CtaBand({ title, subtitle, secondaryHref, secondaryLabel }: CtaBandProps) {
   return (
-    <section className="relative w-full py-14 md:py-16 px-4 section-soft border-t border-border-light/80 overflow-hidden">
-      <div
-        className="pointer-events-none absolute bottom-0 right-0 h-48 w-48 rounded-full bg-navy/5 blur-3xl"
-        aria-hidden
-      />
-      <div className="max-w-5xl mx-auto relative z-10">
+    <section className="relative w-full py-16 md:py-20 px-4 sm:px-6 bg-stitch-surface border-t border-navy/10 overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
         <Reveal>
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 rounded-2xl border border-border-light/90 bg-white/80 backdrop-blur-sm px-8 py-10 shadow-card">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 border border-navy/15 bg-stitch-surface-container p-8 md:p-10">
             <div>
-              <h2
-                className="font-condensed font-bold uppercase mb-2"
-                style={{ fontSize: 'clamp(20px, 3vw, 26px)', color: '#0d2d5e', letterSpacing: '0.04em' }}
-              >
+              <h2 className="font-condensed font-bold md:font-extrabold uppercase mb-2 text-navy tracking-tight text-2xl md:text-3xl">
                 {title}
               </h2>
-              <p className="font-barlow text-body" style={{ fontSize: '14px', lineHeight: '1.65' }}>
+              <p className="font-barlow text-body text-sm md:text-base leading-relaxed max-w-xl">
                 {subtitle}
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
               <a
                 href="tel:6138588525"
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg font-barlow font-medium text-white shadow-lift transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift-lg hover:brightness-110 active:scale-[0.98]"
-                style={{ backgroundColor: '#c0392b', fontSize: '14px' }}
+                className="inline-flex items-center justify-center px-8 py-4 font-condensed font-bold md:font-extrabold text-white bg-red hover:brightness-110 transition-all uppercase text-sm tracking-tight"
               >
                 (613) 858-8525
               </a>
               {secondaryHref && secondaryLabel && (
                 <Link
                   href={secondaryHref}
-                  className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg font-barlow font-medium text-navy border border-navy/25 bg-white hover:bg-navy/5 transition-all duration-300 hover:-translate-y-0.5"
-                  style={{ fontSize: '14px' }}
+                  className="inline-flex items-center justify-center px-8 py-4 font-condensed font-bold text-navy border-2 border-navy bg-transparent hover:bg-navy hover:text-white transition-colors uppercase text-sm tracking-tight"
                 >
                   {secondaryLabel}
                 </Link>

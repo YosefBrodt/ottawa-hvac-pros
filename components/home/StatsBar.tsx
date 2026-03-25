@@ -31,10 +31,10 @@ export default function StatsBar() {
               viewport={{ once: true, margin: '-20px' }}
               transition={{ duration: 0.5, delay: i * 0.06, ease }}
             >
-              <div className="text-3xl sm:text-4xl font-condensed font-black text-navy leading-none mb-1">
+              <div className="text-2xl sm:text-4xl font-condensed font-bold md:font-extrabold text-navy leading-tight mb-1.5 tracking-tight">
                 {stat.value}
               </div>
-              <div className="text-xs font-condensed font-bold tracking-[0.2em] text-body uppercase">
+              <div className="text-[11px] sm:text-xs font-condensed font-semibold tracking-[0.12em] sm:tracking-[0.18em] text-body uppercase leading-snug">
                 {stat.label}
               </div>
             </motion.div>

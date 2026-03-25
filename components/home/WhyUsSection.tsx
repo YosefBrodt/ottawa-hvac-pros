@@ -38,7 +38,7 @@ export default function WhyUsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
           <div className="relative z-10">
             <Reveal>
-              <h2 className="font-condensed font-black text-navy uppercase leading-[0.95] mb-8 text-4xl md:text-6xl tracking-tighter">
+              <h2 className="font-condensed font-bold md:font-extrabold text-navy uppercase leading-snug sm:leading-[0.95] mb-8 text-3xl sm:text-4xl md:text-6xl tracking-tight md:tracking-tighter">
                 The Ottawa HVAC
                 <br />
                 PROS difference
@@ -52,7 +52,7 @@ export default function WhyUsSection() {
                       className={`shrink-0 w-1 ${item.accent === 'red' ? 'bg-red' : 'bg-navy'}`}
                     />
                     <div>
-                      <h3 className="font-condensed font-black text-navy mb-2 uppercase tracking-tight text-lg">
+                      <h3 className="font-condensed font-bold md:font-extrabold text-navy mb-2 uppercase tracking-tight text-lg">
                         {item.title}
                       </h3>
                       <p className="font-barlow text-body leading-relaxed text-sm md:text-base">
@@ -66,7 +66,7 @@ export default function WhyUsSection() {
             <div className="mt-10">
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center bg-navy text-white px-10 py-4 font-condensed font-black tracking-tight uppercase hover:opacity-90 transition-opacity text-sm"
+                className="inline-flex items-center justify-center bg-navy text-white px-10 py-4 font-condensed font-bold md:font-extrabold tracking-tight uppercase hover:opacity-90 transition-opacity text-sm"
               >
                 Our commitment
               </Link>
@@ -86,7 +86,7 @@ export default function WhyUsSection() {
                 />
               </div>
               <div className="absolute bottom-4 right-4 z-20 bg-navy px-5 py-4 hidden sm:block">
-                <p className="text-white font-condensed font-black text-2xl md:text-3xl italic">
+                <p className="text-white font-condensed font-bold md:font-extrabold text-2xl md:text-3xl italic">
                   Pros only.
                 </p>
               </div>
