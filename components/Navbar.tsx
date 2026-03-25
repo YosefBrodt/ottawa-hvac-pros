@@ -44,16 +44,14 @@ export default function Navbar() {
     <nav className="w-full border-b-2 border-red bg-stitch-nav" style={{ minHeight: '56px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between min-h-[56px]">
         <Link href="/" className="flex items-center gap-3 shrink-0">
-          <div
-            className="bg-white flex items-center justify-center overflow-hidden rounded-none"
-            style={{ width: '38px', height: '38px' }}
-          >
+          <div className="relative flex items-center justify-center overflow-hidden rounded-full shrink-0 bg-white w-10 h-10 sm:w-11 sm:h-11">
             <Image
-              src="/logo.svg"
-              alt="Ottawa HVAC PROS logo"
-              width={38}
-              height={38}
+              src="/logo.png"
+              alt="HVAC PROS Ottawa logo"
+              width={44}
+              height={44}
               className="object-contain w-full h-full p-0.5"
+              priority
             />
           </div>
           <div className="flex flex-col leading-none">

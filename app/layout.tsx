@@ -28,6 +28,10 @@ export const metadata: Metadata = {
   description:
     'Licensed HVAC contractor serving Ottawa and Orléans since 2008. Furnace repair, AC installation, air quality services. Same-day service available. Call (613) 858-8525.',
   metadataBase: new URL('https://ottawahvacpro.ca'),
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({
