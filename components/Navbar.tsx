@@ -178,23 +178,23 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden border-t border-white/10 px-4 pb-4 flex flex-col gap-0 bg-stitch-nav">
+        <div className="md:hidden border-t border-navy/10 px-4 pb-4 flex flex-col gap-0 bg-white">
           <Link
             href="/"
             onClick={() => setMenuOpen(false)}
-            className={`font-condensed font-semibold uppercase py-3.5 border-b border-white/10 text-sm tracking-wide ${
-              pathname === '/' ? 'text-red' : 'text-slate-300'
+            className={`font-condensed font-semibold uppercase py-3.5 border-b border-navy/10 text-sm tracking-wide ${
+              pathname === '/' ? 'text-red' : 'text-body'
             }`}
           >
             Home
           </Link>
 
-          <div className="border-b border-white/10">
+          <div className="border-b border-navy/10">
             <button
               type="button"
               onClick={() => setMobileServicesOpen((s) => !s)}
               className={`w-full flex items-center justify-between font-condensed font-semibold uppercase py-3.5 text-sm tracking-wide text-left ${
-                servicesActive ? 'text-red' : 'text-slate-300'
+                servicesActive ? 'text-red' : 'text-body'
               }`}
               aria-expanded={mobileServicesOpen}
             >
@@ -214,7 +214,7 @@ export default function Navbar() {
                 <Link
                   href="/services"
                   onClick={() => setMenuOpen(false)}
-                  className="block py-2 font-barlow text-sm text-white/90 border-l-2 border-red pl-3"
+                  className="block py-2 font-barlow text-sm text-navy border-l-2 border-red pl-3"
                 >
                   All services overview
                 </Link>
@@ -223,7 +223,7 @@ export default function Navbar() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
-                    className="block py-2 font-barlow text-sm text-slate-300 border-l-2 border-white/20 pl-3"
+                    className="block py-2 font-barlow text-sm text-body border-l-2 border-navy/15 pl-3"
                   >
                     {item.label}
                   </Link>
@@ -239,8 +239,8 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className={`font-condensed font-semibold uppercase py-3.5 border-b border-white/10 text-sm tracking-wide ${
-                  active ? 'text-red' : 'text-slate-300'
+                className={`font-condensed font-semibold uppercase py-3.5 border-b border-navy/10 text-sm tracking-wide ${
+                  active ? 'text-red' : 'text-body'
                 }`}
               >
                 {link.label}
