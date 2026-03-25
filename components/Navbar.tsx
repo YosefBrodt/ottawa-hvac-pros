@@ -41,24 +41,29 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <nav className="w-full border-b-2 border-red bg-stitch-nav" style={{ minHeight: '56px' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between min-h-[56px]">
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-          <div className="relative flex items-center justify-center overflow-hidden rounded-full shrink-0 bg-white w-10 h-10 sm:w-11 sm:h-11">
+    <nav className="w-full border-b-2 border-red bg-stitch-nav">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between py-2.5 md:py-3 min-h-[60px] md:min-h-[68px]">
+        <Link
+          href="/"
+          className="group flex items-center gap-3.5 sm:gap-4 shrink-0 min-w-0"
+        >
+          <div
+            className="relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white p-1.5 shadow-[0_10px_40px_-12px_rgba(0,0,0,0.55),0_0_0_1px_rgba(255,255,255,0.22),inset_0_1px_0_rgba(255,255,255,0.95)] ring-1 ring-white/30 transition-[box-shadow,transform] duration-300 group-hover:shadow-[0_14px_44px_-10px_rgba(0,0,0,0.5)] group-hover:-translate-y-px w-[52px] h-[52px] sm:w-[58px] sm:h-[58px] md:w-[68px] md:h-[68px]"
+          >
             <Image
               src="/logo.png"
-              alt="HVAC PROS Ottawa logo"
-              width={44}
-              height={44}
-              className="object-contain object-center w-full h-full min-w-full min-h-full scale-[1.12] origin-center"
+              alt=""
+              width={80}
+              height={80}
+              className="object-contain object-center w-full h-full rounded-xl"
               priority
             />
           </div>
-          <div className="flex flex-col leading-none">
-            <span className="font-condensed font-semibold md:font-bold text-white uppercase tracking-wide text-[14px] sm:text-[15px]">
+          <div className="flex min-w-0 flex-col gap-0.5 leading-none">
+            <span className="font-condensed font-bold md:font-extrabold text-white uppercase tracking-[0.06em] text-[15px] sm:text-base md:text-[17px]">
               Ottawa HVAC PROS
             </span>
-            <span className="text-white/50 font-barlow" style={{ fontSize: '10px' }}>
+            <span className="font-barlow text-[11px] sm:text-xs text-white/55 tracking-wide">
               Orléans, Ontario
             </span>
           </div>
